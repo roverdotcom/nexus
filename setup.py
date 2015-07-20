@@ -17,19 +17,19 @@ class mytest(test):
 
 setup(
     name='nexus',
-    version='0.3.0',
+    version='0.3.1',
     author='Disqus',
     author_email='opensource@disqus.com',
-    url='http://github.com/disqus/nexus',
-    description = 'An extendable admin interface',
-    packages=find_packages(),
+    url='https://github.com/disqus/nexus',
+    description='An extendable admin interface',
+    packages=find_packages(exclude=['example_module', 'example_project']),
     zip_safe=False,
     install_requires=[],
     tests_require = [
         'Django',
         'South',
     ],
-    test_suite = 'nexus.tests',
+    test_suite='nexus.tests',
     include_package_data=True,
     cmdclass={"test": mytest},
     classifiers=[
