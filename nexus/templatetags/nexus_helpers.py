@@ -1,5 +1,6 @@
 from django import template
 from django.utils.datastructures import SortedDict
+from django.conf import settings
 
 import nexus
 from nexus import conf
@@ -16,6 +17,11 @@ register.simple_tag(nexus_media_prefix)
 def nexus_version():
     return nexus.VERSION
 register.simple_tag(nexus_version)
+
+
+def nexus_csrf_cookie_name():
+    return settings.CSRF_COOKIE_NAME
+register.simple_tag(nexus_csrf_cookie_name)
 
 
 def show_navigation(context):
