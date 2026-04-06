@@ -21,7 +21,7 @@ def check_requirements(app_configs, **kwargs):
                     "Nexus depends on '{}'".format(req),
                     id='nexus.E001',
                     hint="Add '{}' to INSTALLED_APPS or set NEXUS_SKIP_INSTALLED_APPS_REQUIREMENTS = True.".format(req),
-                )
+                ),
             )
 
     return errors
