@@ -13,14 +13,13 @@ from django.http import Http404, HttpResponse, HttpResponseNotModified, HttpResp
 from django.shortcuts import render
 from django.template import context_processors
 from django.template.loader import render_to_string
-from django.urls import re_path
+from django.urls import re_path, reverse
 from django.utils.decorators import method_decorator
 from django.utils.http import http_date
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 from django.views.static import was_modified_since
 
-from nexus.compat import reverse
 from nexus.conf import nexus_settings
 
 NEXUS_ROOT = os.path.normpath(os.path.dirname(__file__))
@@ -124,7 +123,7 @@ class NexusSite(object):
                 'request': request,
                 'nexus_site': self,
                 'nexus_media_prefix': nexus_settings.MEDIA_PREFIX.rstrip('/'),
-            }
+            },
         )
         return context
 

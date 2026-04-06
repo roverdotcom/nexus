@@ -34,7 +34,7 @@ def show_navigation(context):
                 },
             )
             for k, v in site.get_categories()
-        ]
+        ],
     )
 
     for namespace, module in site._registry.items():

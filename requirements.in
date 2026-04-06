@@ -1,9 +1,9 @@
 beautifulsoup4
+black
 docutils
 flake8
 flake8-commas
 isort
-multilint
 Pygments
 pytest-cov
 pytest-django
